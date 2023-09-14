@@ -5,46 +5,70 @@
 * IPアドレスのネットワークアドレスが一致し、且つ、ホストアドレスが異なるIPアドレスを<font color="red">***InterfaceA1***</font>に設定する。
 
 ## Goal2
-* <font color="red">***InterfaceC1***</font>と<font color="blue">***InterfaceD1***</font>のサブネットマスクが同一。
-* IPアドレスのネットワークアドレスが一致し、且つ、ホストアドレスが異なるIPアドレスを<font color="red">***InterfaceD1***</font>に設定する。
+* <font color="yellow">***InterfaceC1***</font>と<font color="skayblue">***InterfaceD1***</font>のサブネットマスクが同一。
+* IPアドレスのネットワークアドレスが一致し、且つ、ホストアドレスが異なるIPアドレスを<font color="skayblue">***InterfaceD1***</font>に設定する。
 
 ## chart
 ```mermaid
 flowchart
 subgraph Goal2
-    direction BT
-    ClientC-->InterfaceC1--InterafaceC1.NW == InterafaceD1.NW <br>AND<br>InterafaceC1.IP != InterafaceD1.IP-->InterfaceD1-->ClientD
+    direction TB
+    CL_C[ClientC]
+    CL_D[ClientD]
+    IF_C[InterfaceC1]
+    IF_D[InterfaceD1]
+    CL_C-->IF_C-->IF_D-->CL_D
 end
 subgraph Goal1
-    direction BT
-    ClientA-->InterfaceA1--InterafaceA1.NW == InterafaceB1.NW <br>AND<br>InterafaceA1.IP != InterafaceB1.IP-->InterfaceB1-->ClientB
+    direction TB
+    CL_A[ClientA]
+    CL_B[ClientB]
+    IF_A[InterfaceA1]
+    IF_B[InterfaceB1]
+    CL_A-->IF_A-->IF_B-->CL_B
 end
 ```
+
 ## example
 ```mermaid
 flowchart
 
 Goal2_before-->Goal2_after
 subgraph Goal2_before
-    direction BT
-    MyMac-->211.191.109.75/255.255.0.0-- InterafaceC1.NW == InterafaceD1.NW <br>AND<br>InterafaceC1.IP != InterafaceD1.IP-->0.0.0.0/255.255.0.0-->MyLittleSister'sComputer
+    direction TB
+    BE_CL_C[ClientC]
+    BE_CL_D[ClientD]
+    BE_IF_C[211.191.109.75/255.255.0.0]
+    BE_IF_D[0.0.0.0/255.255.0.0]
+    BE_CL_C-->BE_IF_C-->BE_IF_D-->BE_CL_D
 end
 
 subgraph Goal2_after
-    direction BT
-    _MyMac-->_211.191.109.75/255.255.0.0-- InterafaceC1.NW == InterafaceD1.NW <br>AND<br>InterafaceC1.IP != InterafaceD1.IP-->_211.191.109.76,255.255.0.0-->_MyLittleSister'sComputer
+    direction TB
+    AF_CL_C[ClientC]
+    AF_CL_D[ClientD]
+    AF_IF_C[211.191.109.75/255.255.0.0]
+    AF_IF_D[211.191.109.76,255.255.0.0]
+    AF_CL_C-->AF_IF_C-->AF_IF_D-->AF_CL_D
 end
 
 
 Goal1_before-->Goal1_after
 subgraph Goal1_before
-    direction BT
-    MyPC-->0.0.0.0/255.255.255.0-- InterafaceA1.NW == InterafaceB1.NW <br>AND<br>InterafaceA1.IP != InterafaceB1.IP-->104.96.23.12/255.255.255.0-->MyLittleBrother'sComputer
+    direction TB
+    BE_CL_A[ClientA]
+    BE_CL_B[ClientB]
+    BE_IF_A[0.0.0.0/255.255.255.0]
+    BE_IF_B[104.96.23.12/255.255.255.0]
+    BE_CL_A-->BE_IF_A-->BE_IF_B-->BE_CL_B
 end
 
 subgraph Goal1_after
-    direction BT
-    _MyPC-->_104.96.23.13/255.255.255.0-- InterafaceA1.NW == InterafaceB1.NW <br>AND<br>InterafaceA1.IP != InterafaceB1.IP-->_104.96.23.12/255.255.255.0-->_MyLittleBrother'sComputer
+    direction TB
+    AF_CL_A[ClientA]
+    AF_CL_B[ClientB]
+    AF_IF_A[104.96.23.13/255.255.255.0]
+    AF_IF_B[104.96.23.12/255.255.255.0]
+    AF_CL_A-->AF_IF_A-->AF_IF_B-->AF_CL_B
 end
-
 ```
