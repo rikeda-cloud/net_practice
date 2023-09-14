@@ -1,1 +1,1 @@
-# net_practice
+# net_practiceの解き方となぜ解けるのかをまとめたリポジトリ
