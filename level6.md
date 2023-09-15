@@ -1,4 +1,4 @@
-# level5
+# level6
 
 ## Goal1
 * <font color="red">***InterfaceA1***</font>に<font color="blue">***InterfaceR1***</font>と同じサブネットマスクを設定する。（省略）
@@ -9,7 +9,8 @@
 
 ## chart
 ```mermaid
-%% { init: { 'flowchart': { 'curve': 'stepBefore' } } } %%
+%%{init:{'theme': 'dark'}}%%
+%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 subgraph Goal2
     direction BT
@@ -32,6 +33,8 @@ end
 ```
 ## example
 ```mermaid
+%%{init:{'theme': 'dark'}}%%
+%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 Goal1_before-->Goal1_after
 subgraph Goal1_before

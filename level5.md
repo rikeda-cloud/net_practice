@@ -15,6 +15,8 @@
 
 ## chart
 ```mermaid
+%%{init:{'theme': 'dark'}}%%
+%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 subgraph Goal2
     direction BT
@@ -35,6 +37,8 @@ end
 ```
 ## example
 ```mermaid
+%%{init:{'theme': 'dark'}}%%
+%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 Goal3_before-->Goal3_after
 subgraph Goal3_before
