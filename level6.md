@@ -7,9 +7,9 @@
 * <font color="cyan">***RouterR***</font>のデフォルトゲートウェイに<font color="skayblue">***InterfaceR2***</font>のIPアドレスを設定する。
 * <font color="yellow">***Internet***</font>から内部ネットワークへの送り先アドレスに<font color="red">***InterfaceA1***</font>と同じネットワークアドレスの値と同じサブネットマスクの値を設定する。
 
-
 ## chart
 ```mermaid
+%% { init: { 'flowchart': { 'curve': 'stepBefore' } } } %%
 flowchart
 subgraph Goal2
     direction BT
