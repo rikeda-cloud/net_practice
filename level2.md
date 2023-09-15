@@ -13,7 +13,7 @@
 %%{init:{'theme': 'dark'}}%%
 %%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
-subgraph Goal2
+subgraph LEVEL2
     direction TB
     CL_C[[ClientC]]
     CL_D[[ClientD]]

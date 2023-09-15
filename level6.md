@@ -7,12 +7,12 @@
 * <font color="cyan">***RouterR***</font>のデフォルトゲートウェイに<font color="skayblue">***InterfaceR2***</font>のIPアドレスを設定する。
 * <font color="yellow">***Internet***</font>から内部ネットワークへの送り先アドレスに<font color="red">***InterfaceA1***</font>と同じネットワークアドレスの値と同じサブネットマスクの値を設定する。
 
+<!-- %%{init:{'theme': 'dark'}}%% -->
+<!-- %%{init:{'flowchart': {'curve': 'natural'}}}%% -->
 ## chart
 ```mermaid
-%%{init:{'theme': 'dark'}}%%
-%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
-subgraph Goal2
+subgraph LEVEL6
     direction BT
     CA[[ClientA]]
     RR(((RouterR)))
@@ -31,10 +31,11 @@ subgraph Goal2
     NET-.->IS-.->NET
 end
 ```
+
+<!-- %%{init:{'theme': 'dark'}}%% -->
+<!-- %%{init:{'flowchart': {'curve': 'natural'}}}%% -->
 ## example
 ```mermaid
-%%{init:{'theme': 'dark'}}%%
-%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 Goal1_before-->Goal1_after
 subgraph Goal1_before
