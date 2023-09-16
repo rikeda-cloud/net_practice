@@ -7,10 +7,9 @@
 * <font color="cyan">***RouterR***</font>のデフォルトゲートウェイに<font color="skayblue">***InterfaceR2***</font>のIPアドレスを設定する。
 * <font color="yellow">***Internet***</font>から内部ネットワークへの送り先アドレスに<font color="red">***InterfaceA1***</font>と同じネットワークアドレスの値と同じサブネットマスクの値を設定する。
 
-<!-- %%{init:{'theme': 'dark'}}%% -->
-<!-- %%{init:{'flowchart': {'curve': 'natural'}}}%% -->
 ## chart
 ```mermaid
+%%{init:{'theme': 'dark'}}%%
 flowchart
 subgraph LEVEL6
     direction BT
@@ -22,20 +21,14 @@ subgraph LEVEL6
     IS[InterfaceSomewhere]
     S{SwitchS}
     NET{{Internet}}
-    CA-->IA-->CA
-    IA-->S-->IA
-    IR1-->S-->IR1
-    IR1-->RR-->IR1
-    RR-->IR2-->RR
-    IR2-->NET-->IR2
-    NET-.->IS-.->NET
+    CA-->IA-->S-->IR1-->RR-->IR2-->NET-.->IS
+    IS-.->NET-->IR2-->RR-->IR1-->S-->IA-->CA
 end
 ```
 
-<!-- %%{init:{'theme': 'dark'}}%% -->
-<!-- %%{init:{'flowchart': {'curve': 'natural'}}}%% -->
 ## example
 ```mermaid
+%%{init:{'theme': 'dark'}}%%
 flowchart
 Goal1_before-->Goal1_after
 subgraph Goal1_before
@@ -48,7 +41,7 @@ subgraph Goal1_before
     BE_IF_S[Somewhere<br>8.8.8.8/16]
     BE_S{SwitchS}
     BE_NET{{Internet<br>0.0.0.0/0 => 163.172.250.12}}
-    BE_CL_A-->BE_IF_A-->BE_S-->BE_IF_R1-->BE_RR-->BE_IF_R2-->BE_NET-->BE_IF_S   
+    BE_CL_A<-->BE_IF_A<-->BE_S<-->BE_IF_R1<-->BE_RR<-->BE_IF_R2<-->BE_NET<-->BE_IF_S   
 end
 
 subgraph Goal1_after
@@ -61,6 +54,6 @@ subgraph Goal1_after
     AF_IF_S[Somewhere<br>8.8.8.8/16]
     AF_S{SwitchS}
     AF_NET{{Internet<br>91.141.41.227/25 => 163.172.250.12}}
-    AF_CL_A-->AF_IF_A-->AF_S-->AF_IF_R1-->AF_RR-->AF_IF_R2-->AF_NET-->AF_IF_S   
+    AF_CL_A<-->AF_IF_A<-->AF_S<-->AF_IF_R1<-->AF_RR<-->AF_IF_R2<-->AF_NET<-->AF_IF_S   
 end
 ```

@@ -13,7 +13,6 @@
 ## chart
 ```mermaid
 %%{init:{'theme': 'dark'}}%%
-%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 subgraph LEVEL4
     direction BT
@@ -26,20 +25,16 @@ subgraph LEVEL4
     IR2[InterfaceR2]
     IR3[InterfaceR3]
     S{SwichS}
-    CA-->IA-->CA
-    IA-->S-->IA
+    CA-->IA-->S-->IA-->CA
+    S-->IR1-->RR-->IR1-->S
     RR-.->IR2
     RR-.->IR3
-    RR-->IR1-->RR
-    IR1-->S-->IR1
-    CB-->IB-->CB
-    IB-->S-->IB
+    CB-->IB-->S-->IB-->CB
 end
 ```
 ## example
 ```mermaid
 %%{init:{'theme': 'dark'}}%%
-%%{init:{'flowchart': {'curve': 'natural'}}}%%
 flowchart
 Goal3_before-->Goal3_after
 subgraph Goal3_before
@@ -49,7 +44,7 @@ subgraph Goal3_before
     G3_BE_IF_B[0.0.0.0/0.0.0.0]
     G3_BE_IF_R1[0.0.0.0/0.0.0.0]
     G3_BE_S{SwichS}
-    G3_BE_CL_B-->G3_BE_IF_B-->G3_BE_S-->G3_BE_IF_R1-->G3_BE_RR
+    G3_BE_CL_B<-->G3_BE_IF_B<-->G3_BE_S<-->G3_BE_IF_R1<-->G3_BE_RR
 end
 
 subgraph Goal3_after
@@ -59,7 +54,7 @@ subgraph Goal3_after
     G3_AF_IF_B[117.254.115.134/255.255.0.0]
     G3_AF_IF_R1[117.254.115.133/255.255.0.0]
     G3_AF_S{SwichS}
-    G3_AF_CL_B-->G3_AF_IF_B-->G3_AF_S-->G3_AF_IF_R1-->G3_AF_RR
+    G3_AF_CL_B<-->G3_AF_IF_B<-->G3_AF_S<-->G3_AF_IF_R1<-->G3_AF_RR
 end
 
 Goal2_before-->Goal2_after
@@ -70,7 +65,7 @@ subgraph Goal2_before
     G2_BE_IF_A[117.254.115.132/0.0.0.0]
     G2_BE_IF_R1[0.0.0.0/0.0.0.0]
     G2_BE_S{SwichS}
-    G2_BE_CL_A-->G2_BE_IF_A-->G2_BE_S-->G2_BE_IF_R1-->G2_BE_RR
+    G2_BE_CL_A<-->G2_BE_IF_A<-->G2_BE_S<-->G2_BE_IF_R1<-->G2_BE_RR
 end
 
 subgraph Goal2_after
@@ -80,7 +75,7 @@ subgraph Goal2_after
     G2_AF_IF_A[117.254.115.132/255.255.0.0]
     G2_AF_IF_R1[117.254.115.133/255.255.0.0]
     G2_AF_S{SwichS}
-    G2_AF_CL_A-->G2_AF_IF_A-->G2_AF_S-->G2_AF_IF_R1-->G2_AF_RR
+    G2_AF_CL_A<-->G2_AF_IF_A<-->G2_AF_S<-->G2_AF_IF_R1<-->G2_AF_RR
 end
 
 
@@ -92,7 +87,7 @@ subgraph Goal1_before
     G1_BE_IF_A[117.254.115.132/0.0.0.0]
     G1_BE_IF_B[0.0.0.0/0.0.0.0]
     G1_BE_S{SwichS}
-    G1_BE_CL_A-->G1_BE_IF_A-->G1_BE_S-->G1_BE_IF_B-->G1_BE_CL_B
+    G1_BE_CL_A<-->G1_BE_IF_A<-->G1_BE_S<-->G1_BE_IF_B<-->G1_BE_CL_B
 end
 
 subgraph Goal1_after
@@ -102,6 +97,6 @@ subgraph Goal1_after
     G1_AF_IF_A[117.254.115.132/255.255.0.0]
     G1_AF_IF_B[117.254.115.134/255.255.0.0]
     G1_AF_S{SwichS}
-    G1_AF_CL_A-->G1_AF_IF_A-->G1_AF_S-->G1_AF_IF_B-->G1_AF_CL_B
+    G1_AF_CL_A<-->G1_AF_IF_A<-->G1_AF_S<-->G1_AF_IF_B<-->G1_AF_CL_B
 end
 ```
