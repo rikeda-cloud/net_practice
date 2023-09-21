@@ -1,7 +1,7 @@
 # level2
 
 ## Goal1
-* <font color="red">***InterfaceB1***</font>と<font color="blue">***InterfaceA1***</font>のサブネットマスクが違うため、サブネットマスクを揃える。（サブネットを揃えなくても良いが説明は省略）
+* <font color="red">***InterfaceB1***</font>と<font color="blue">***InterfaceA1***</font>のサブネットマスクが違うため、サブネットマスクを揃える。（必ずしもサブネットを揃える必要はないが説明は省略）
 * IPアドレスのネットワークアドレスが一致し、且つ、ホストアドレスが異なるIPアドレスを<font color="blue">***InterfaceA1***</font>に設定する。
 
 ## Goal2
@@ -43,7 +43,7 @@ subgraph Goal2_before
     BE_CL_C[[ClientC]]
     BE_CL_D[[ClientD]]
     BE_IF_C[127.0.0.1/255.255.255.252]
-    BE_IF_D[127.0.0.4//30]
+    BE_IF_D[127.0.0.4/30]
     BE_CL_C<-->BE_IF_C<-->BE_IF_D<-->BE_CL_D
 end
 
@@ -52,7 +52,7 @@ subgraph Goal2_after
     AF_CL_C[[ClientC]]
     AF_CL_D[[ClientD]]
     AF_IF_C[111.111.111.1/255.255.255.252]
-    AF_IF_D[111.111.111.2//30]
+    AF_IF_D[111.111.111.2/30]
     AF_CL_C<-->AF_IF_C<-->AF_IF_D<-->AF_CL_D
 end
 
@@ -63,7 +63,7 @@ subgraph Goal1_before
     BE_CL_A[[ClientA]]
     BE_CL_B[[ClientB]]
     BE_IF_A[0.0.0.0/255.255.255.224]
-    BE_IF_B[192.168.77.222/0.0.0.0]
+    BE_IF_B[192.168.77.222/0]
     BE_CL_A<-->BE_IF_A<-->BE_IF_B<-->BE_CL_B
 end
 
@@ -72,7 +72,7 @@ subgraph Goal1_after
     AF_CL_A[[ClientA]]
     AF_CL_B[[ClientB]]
     AF_IF_A[192.168.77.221/255.255.255.224]
-    AF_IF_B[192.168.77.222/255.255.255.224]
+    AF_IF_B[192.168.77.222/27]
     AF_CL_A<-->AF_IF_A<-->AF_IF_B<-->AF_CL_B
 end
 ```
