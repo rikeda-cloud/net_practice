@@ -1,12 +1,14 @@
 # level1
 
-## Goal1
-* <font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>のサブネットマスクが同一。
-* IPアドレスのネットワークアドレスが一致し、且つ、ホストアドレスが異なるIPアドレスを<font color="red">***InterfaceA1***</font>に設定する。
+## How to solve
 
-## Goal2
+### Goal1
+* <font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>のサブネットマスクが同一。
+* IPアドレスのネットワーク部が一致し、且つ、ホスト部が異なるIPアドレスを<font color="red">***InterfaceA1***</font>に設定する。
+
+### Goal2
 * <font color="yellow">***InterfaceC1***</font>と<font color="skayblue">***InterfaceD1***</font>のサブネットマスクが同一。
-* IPアドレスのネットワークアドレスが一致し、且つ、ホストアドレスが異なるIPアドレスを<font color="skayblue">***InterfaceD1***</font>に設定する。
+* IPアドレスのネットワーク部が一致し、且つ、ホスト部が異なるIPアドレスを<font color="skayblue">***InterfaceD1***</font>に設定する。
 
 ## chart
 ```mermaid

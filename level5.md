@@ -1,17 +1,18 @@
 # level5
 
-## Goal1
+## How to solve
+### Goal1
 * <font color="red">***InterfaceA1***</font>に<font color="blue">***InterfaceR1***</font>と同じサブネットマスクを設定する。（省略）
-* 既にIPアドレスが設定されている<font color="blue">***InterfaceR1***</font>とネットワークアドレスは一致し、ホストアドレスが異なるIPアドレスを<font color="red">***InterfaceA1***</font>に設定する。
-* <font color="yellow">***ClientA***</font>のデフォルトゲートウェイに<font color="blue">***InterfaceR1***</font>のIPアドレスを設定する。
+* 既にIPアドレスが設定されている<font color="blue">***InterfaceR1***</font>とネットワーク部は一致し、ホスト部が異なるIPアドレスを<font color="red">***InterfaceA1***</font>に設定する。
+* <font color="yellow">***ClientA***</font>のデフォルトルートに<font color="blue">***InterfaceR1***</font>のIPアドレスを設定する。
 
-## Goal2
+### Goal2
 * <font color="green">***InterfaceB1***</font>に<font color="skayblue">***InterfaceR2***</font>と同じサブネットマスクを設定する。（省略）
-* 既にIPアドレスが設定されている<font color="skayblue">***InterfaceR2***</font>とネットワークアドレスは一致し、ホストアドレスが異なるIPアドレスを<font color="green">***InterfaceB1***</font>に設定する。
-* <font color="cyan">***ClientB***</font>のデフォルトゲートウェイに<font color="skayblue">***InterfaceR2***</font>のIPアドレスを設定する。
+* 既にIPアドレスが設定されている<font color="skayblue">***InterfaceR2***</font>とネットワーク部は一致し、ホスト部が異なるIPアドレスを<font color="green">***InterfaceB1***</font>に設定する。
+* <font color="cyan">***ClientB***</font>のデフォルトルートに<font color="skayblue">***InterfaceR2***</font>のIPアドレスを設定する。
 
-## Goal3
-* <font color="blue">***InterfaceR1***</font>側と<font color="skayblue">***InterfaceR2***</font>側のネットワークアドレスが別になるように調節する。
+### Goal3
+* <font color="blue">***InterfaceR1***</font>側と<font color="skayblue">***InterfaceR2***</font>側のネットワーク部が別になるように調節する。
 
 ## chart
 ```mermaid

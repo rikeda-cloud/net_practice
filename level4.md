@@ -1,14 +1,15 @@
 # level4
 
-## Goal1
+## How to solve
+### Goal1
 * <font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>と<font color="green">***InterfaceR1***</font>のサブネットマスクがセットされていないため、適当なサブネットマスクを設定する。（省略）
-* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワークアドレスは一致し、ホストアドレスが異なるIPアドレスを<font color="blue">***InterfaceB1***</font>に設定する。
+* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワーク部は一致し、ホスト部が異なるIPアドレスを<font color="blue">***InterfaceB1***</font>に設定する。
 
-## Goal2
-* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワークアドレスは一致し、ホストアドレスが異なるIPアドレスを<font color="green">***InterfaceR1***</font>に設定する。
+### Goal2
+* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワーク部は一致し、ホスト部が異なるIPアドレスを<font color="green">***InterfaceR1***</font>に設定する。
 
-## Goal3
-* <font color="yellow">***InterfaceR2***</font>と<font color="skayblue">***InterfaceR3***</font>と（<font color="red">***InterfaceA1***</font>,<font color="blue">***InterfaceB1***</font>,<font color="green">***InterfaceR1***</font>）のネットワークアドレスが異なり、且つ、<font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>と<font color="green">***InterfaceR1***</font>のネットワークアドレスが同一、且つ、ホストアドレスが異なるIPアドレスに調節する。
+### Goal3
+* <font color="yellow">***InterfaceR2***</font>と<font color="skayblue">***InterfaceR3***</font>と（<font color="red">***InterfaceA1***</font>,<font color="blue">***InterfaceB1***</font>,<font color="green">***InterfaceR1***</font>）のネットワーク部が異なり、且つ、<font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>と<font color="green">***InterfaceR1***</font>のネットワーク部が同一、且つ、ホスト部が異なるIPアドレスに調節する。
 
 ## chart
 ```mermaid

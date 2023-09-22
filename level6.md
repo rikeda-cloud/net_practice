@@ -1,11 +1,11 @@
 # level6
 
-## Goal1
+## How to solve
+### Goal1
 * <font color="red">***InterfaceA1***</font>に<font color="blue">***InterfaceR1***</font>と同じサブネットマスクを設定する。（省略）
-* <font color="blue">***InterfaceR1***</font>に<font color="red">***InterfaceA1***</font>ネットワークアドレスが同じでホストアドレスが異なるIPアドレスを設定する。
-* <font color="green">***ClientA***</font>のデフォルトゲートウェイに<font color="blue">***InterfaceR1***</font>のIPアドレスを設定する。
-* <font color="cyan">***RouterR***</font>のデフォルトゲートウェイに<font color="skayblue">***InterfaceR2***</font>のIPアドレスを設定する。
-* <font color="yellow">***Internet***</font>から内部ネットワークへの送り先アドレスに<font color="red">***InterfaceA1***</font>と同じネットワークアドレスの値と同じサブネットマスクの値を設定する。
+* <font color="blue">***InterfaceR1***</font>に<font color="red">***InterfaceA1***</font>ネットワーク部が同じでホスト部が異なるIPアドレスを設定する。
+* <font color="green">***ClientA***</font>のデフォルトルートに<font color="blue">***InterfaceR1***</font>のIPアドレスを設定する。
+* <font color="yellow">***Internet***</font>から内部ネットワークへの送り先ネットワークアドレスに<font color="red">***InterfaceA1***</font>と同じネットワークアドレス値を設定する。
 
 ## chart
 ```mermaid
@@ -53,7 +53,7 @@ subgraph Goal1_after
     AF_IF_R2[163.172.250.12/255.255.255.240]
     AF_IF_S[Somewhere<br>8.8.8.8/16]
     AF_S{SwitchS}
-    AF_NET{{Internet<br>91.141.41.227/25 => 163.172.250.12}}
+    AF_NET{{Internet<br>91.141.41.128/25 => 163.172.250.12}}
     AF_CL_A<-->AF_IF_A<-->AF_S<-->AF_IF_R1<-->AF_RR<-->AF_IF_R2<-->AF_NET<-->AF_IF_S   
 end
 ```

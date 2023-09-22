@@ -1,13 +1,14 @@
 # level3
 
-## Goal1
-* <font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>のサブネットマスクがセットされていないため、値がセットされている<font color="green">***InterfaceC1***</font>のサブネットマスク に合わせる。（省略）
-* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワークアドレスは一致し、ホストアドレスが異なるIPアドレスを<font color="blue">***InterfaceB1***</font>に設定する。
+## How to solve
+### Goal1
+* <font color="red">***InterfaceA1***</font>と<font color="blue">***InterfaceB1***</font>のサブネットマスクが設定されていないため、値が設定されている<font color="green">***InterfaceC1***</font>のサブネットマスク に合わせる。（省略）
+* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワーク部は一致し、ホスト部が異なるIPアドレスを<font color="blue">***InterfaceB1***</font>に設定する。
 
-## Goal2
-* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワークアドレスは一致し、ホストアドレスが異なるIPアドレスを<font color="green">***InterfaceC1***</font>に設定する。
+### Goal2
+* 既にIPアドレスが設定されている<font color="red">***InterfaceA1***</font>とネットワーク部は一致し、ホスト部が異なるIPアドレスを<font color="green">***InterfaceC1***</font>に設定する。
 
-## Goal3
+### Goal3
 * Goal1とGoal2の設定が競合しないようなIPアドレスを調整する。
 
 ## chart

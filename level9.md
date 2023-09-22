@@ -1,28 +1,27 @@
 # level9
 
-## Goal1
+## How to solve
+### Goal1
 * <font color="red">***InterfaceA1***</font>,<font color="blue">***InterfaceB1***</font>のサブネットマスクを<font color="green">***InterfaceR11***</font>のサブネットマスクに合わせる。（省略）
-* <font color="red">***InterfaceA1***</font>,<font color="blue">***InterfaceB1***</font>,<font color="green">***InterfaceR11***</font>それぞれにネットワークアドレスが同じでホストアドレスが異なるIPアドレスを設定する。
-* <font color="#0F0F0F">***ClientA***</font>と<font color="#F0F0F0">***ClientB***</font>のデフォルトゲートウェイに<font color="green">***InterfaceR11***</font>のIPアドレスを設定する。
+* <font color="red">***InterfaceA1***</font>,<font color="blue">***InterfaceB1***</font>,<font color="green">***InterfaceR11***</font>それぞれにネットワーク部が同じでホスト部が異なるIPアドレスを設定する。
+* <font color="#0F0F0F">***ClientA***</font>と<font color="#F0F0F0">***ClientB***</font>のデフォルトルートに<font color="green">***InterfaceR11***</font>のIPアドレスを設定する。
 
-## Goal2
+### Goal2
 * <font color="#00FFFF">***InterfaceC1***</font>,<font color="#45ABCD">***InterfaceD1***</font>,<font color="#0FFFF0">***InterfaceR22***</font>のサブネットマスクを<font color="#292929">***InterfaceR23***</font>のサブネットマスク/18に合わせる。（省略）
-* <font color="#292929">***InterfaceR23***</font>のIPアドレスを<font color="#098765">***ClientD***</font>のデフォルトゲートウェイのIPアドレスに設定する。<font color="#45ABCD">***InterfaceD1***</font>のIPアドレスを<font color="#292929">***InterfaceR23***</font>のIPアドレスと異なるネットワークアドレスで、且つ、同一のホストアドレスに設定する。
-* <font color="#00FFFF">***InterfaceC1***</font>の属するネットワークが<font color="#098765">***ClientD***</font>の属するネットワークとサブネットマスク/18においてネットワークアドレスが別々になり、且つ、/17においてネットワークアドレスが一致するIPアドレスを設定し、それぞれのネットワークでホストアドレスは異なるIPアドレスを設定する。
-* <font color="#043210">***ClientC***</font>のデフォルトゲートウェイを<font color="#0FFFF0">***InterfaceR22***</font>のIPアドレスに、のIPアドレスに設定する。
+* <font color="#292929">***InterfaceR23***</font>のIPアドレスを<font color="#098765">***ClientD***</font>のデフォルトルートのIPアドレスに設定する。<font color="#45ABCD">***InterfaceD1***</font>のIPアドレスを<font color="#292929">***InterfaceR23***</font>のIPアドレスと異なるネットワーク部で、且つ、同一のホスト部に設定する。
+* <font color="#00FFFF">***InterfaceC1***</font>の属するネットワークが<font color="#098765">***ClientD***</font>の属するネットワークとサブネットマスク/18においてネットワーク部が別々になり、且つ、/17においてネットワーク部が一致するIPアドレスを設定し、それぞれのネットワークでホスト部は異なるIPアドレスを設定する。
+* <font color="#043210">***ClientC***</font>のデフォルトルートを<font color="#0FFFF0">***InterfaceR22***</font>のIPアドレスに、のIPアドレスに設定する。
 
-## Goal3
-* <font color="yellow">***Internet***</font>のデフォルトゲートウェイ設定に<font color="green">***InterfaceR11***</font>,<font color="#043210">***ClientC***</font>,<font color="#098765">***ClientD***</font>のネットワークを設定する。
-* <font color="#FAFAFA">***RouterR1***</font>のデフォルトゲートウェイ設定に、<font color="green">***InterfaceR11***</font>の属するネットワーク向けのパケット => <font color="green">***InterfaceR11***</font>,<font color="#043210">***ClientC***</font>,<font color="#098765">***ClientD***</font>の属するネットワーク向けのパケット => <font color="#184533">***InterfaceR21***</font>を設定する。注意点として、<font color="#043210">***ClientC***</font>,<font color="#098765">***ClientD***</font>の属するネットワーク向けのパケットのサブネットの値は、/17とする。(Goal2で/17によって上手くルーティングされるように設定している)
+### Goal3
+* <font color="yellow">***Internet***</font>のデフォルトルート設定に<font color="green">***InterfaceR11***</font>,<font color="#043210">***ClientC***</font>,<font color="#098765">***ClientD***</font>のネットワークを設定する。
+* <font color="#FAFAFA">***RouterR1***</font>のデフォルトルート設定に、<font color="green">***InterfaceR11***</font>の属するネットワーク向けのパケット => <font color="green">***InterfaceR11***</font>,<font color="#043210">***ClientC***</font>,<font color="#098765">***ClientD***</font>の属するネットワーク向けのパケット => <font color="#184533">***InterfaceR21***</font>を設定する。注意点として、<font color="#043210">***ClientC***</font>,<font color="#098765">***ClientD***</font>の属するネットワーク向けのパケットのサブネットの値は、/17とする。(Goal2で/17によって上手くルーティングされるように設定している)
 
-## Goal4
-* <font color="#184533">***InterfaceR21***</font>と<font color="#453FFF3">***InterfaceR13***</font>のサブネットマスク、ネットワークアドレスを一致させ、ホストアドレスが異なるIPアドレスを設定する。
-* <font color="#BBB000">***RouterR2***</font>のデフォルトゲートウェイを<font color="#453FFF3">***InterfaceR13***</font>のIPアドレスに設定する。
+### Goal4
+* <font color="#184533">***InterfaceR21***</font>と<font color="#453FFF3">***InterfaceR13***</font>のサブネットマスク、ネットワーク部を一致させ、ホスト部が異なるIPアドレスを設定する。
+* <font color="#BBB000">***RouterR2***</font>のデフォルトルートを<font color="#453FFF3">***InterfaceR13***</font>のIPアドレスに設定する。
 
-## Goal5, Goal6
+### Goal5, Goal6
 Goal1, Goal2, Goal3, Goal4で正しく設定できていればOK
-
-
 
 ## chart
 ```mermaid
@@ -71,11 +70,11 @@ subgraph Goal6_before
     G6_BE_RR1(((RouterR1<br>0.0.0.0/0 => 0.0.0.0<br>0.0.0.0/0 => 0.0.0.0<br>0.0.0.0/0 => 163.172.250.1)))
     G6_BE_RR2(((RouterR2<br>0.0.0.0/0 => 0.0.0.0)))
     G6_BE_CL_C[[ClientC<br>0.0.0.0/0 => 0.0.0.0]]
-    G6_BE_IF_C[0.0.0.0/0.0.0.0]
+    G6_BE_IF_C[0.0.0.0/0]
     G6_BE_IF_R12[163.172.250.12/255.255.255.240]
-    G6_BE_IF_R13[0.0.0.0/0.0.0.0]
+    G6_BE_IF_R13[0.0.0.0/0]
     G6_BE_IF_R21[0.0.0.0/255.255.255.252]
-    G6_BE_IF_R22[0.0.0.0/0.0.0.0]
+    G6_BE_IF_R22[0.0.0.0/0]
     G6_BE_CL_C<-->G6_BE_IF_C<-->G6_BE_IF_R22<-->G6_BE_RR2<-->G6_BE_IF_R21<-->G6_BE_IF_R13<-->G6_BE_RR1<-->G6_BE_IF_R12<-->G6_BE_NET
 end
 
@@ -102,12 +101,12 @@ subgraph Goal5_before
     G5_BE_S{Switch}
     G5_BE_CL_B[[ClientB<br>0.0.0.0/0 => 0.0.0.0]]
     G5_BE_CL_C[[ClientC<br>0.0.0.0/0 => 0.0.0.0]]
-    G5_BE_IF_B[0.0.0.0/0.0.0.0]
-    G5_BE_IF_C[0.0.0.0/0.0.0.0]
+    G5_BE_IF_B[0.0.0.0/0]
+    G5_BE_IF_C[0.0.0.0/0]
     G5_BE_IF_R11[0.0.0.0/255.255.255.128]
-    G5_BE_IF_R13[0.0.0.0/0.0.0.0]
+    G5_BE_IF_R13[0.0.0.0/0]
     G5_BE_IF_R21[0.0.0.0/255.255.255.252]
-    G5_BE_IF_R22[0.0.0.0/0.0.0.0]
+    G5_BE_IF_R22[0.0.0.0/0]
     G5_BE_CL_B<-->G5_BE_IF_B<-->G5_BE_S<-->G5_BE_IF_R11<-->G5_BE_RR1<-->G5_BE_IF_R13<-->G5_BE_IF_R21<-->G5_BE_RR2<-->G5_BE_IF_R22<-->G5_BE_IF_C<-->G5_BE_CL_C
 end
 
@@ -136,10 +135,10 @@ subgraph Goal4_before
     G4_BE_S{Switch}
     G4_BE_CL_A[[ClientA<br>0.0.0.0/0 => 0.0.0.0]]
     G4_BE_CL_D[[ClientD<br>0.0.0.0/0 => 19.2.3.235]]
-    G4_BE_IF_A[0.0.0.0/0.0.0.0]
-    G4_BE_IF_D[0.0.0.0/0.0.0.0]
+    G4_BE_IF_A[0.0.0.0/0]
+    G4_BE_IF_D[0.0.0.0/0]
     G4_BE_IF_R11[0.0.0.0/255.255.255.128]
-    G4_BE_IF_R13[0.0.0.0/0.0.0.0]
+    G4_BE_IF_R13[0.0.0.0/0]
     G4_BE_IF_R21[0.0.0.0/255.255.255.252]
     G4_BE_IF_R23[0.0.0.0/18]
     G4_BE_CL_A<-->G4_BE_IF_A<-->G4_BE_S<-->G4_BE_IF_R11<-->G4_BE_RR1<-->G4_BE_IF_R13<-->G4_BE_IF_R21<-->G4_BE_RR2<-->G4_BE_IF_R23<-->G4_BE_IF_D<-->G4_BE_CL_D
@@ -195,9 +194,9 @@ subgraph Goal2_before
     G2_BE_RR2(((RouterR2<br>0.0.0.0/0 => 0.0.0.0)))
     G2_BE_CL_C[[ClientC<br>0.0.0.0/0 => 0.0.0.0]]
     G2_BE_CL_D[[ClientD<br>0.0.0.0/0 => 19.2.3.235]]
-    G2_BE_IF_C[0.0.0.0/0.0.0.0]
-    G2_BE_IF_D[0.0.0.0/0.0.0.0]
-    G2_BE_IF_R22[0.0.0.0/0.0.0.0]
+    G2_BE_IF_C[0.0.0.0/0]
+    G2_BE_IF_D[0.0.0.0/0]
+    G2_BE_IF_R22[0.0.0.0/0]
     G2_BE_IF_R23[0.0.0.0/18]
     G2_BE_CL_C<-->G2_BE_IF_C<-->G2_BE_IF_R22<-->G2_BE_RR2<-->G2_BE_IF_R23<-->G2_BE_IF_D<-->G2_BE_CL_D
 end
